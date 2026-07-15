@@ -19,6 +19,9 @@ extern "C"
 #include <string.h>
 #include <stdbool.h>
 
+/* 等待时间常量 */
+#define AKERNEL_WAIT_FOREVER  0xFFFFFFFFU
+
 /* 编译器相关宏定义 */
 #if defined(__CC_ARM) || defined(__CLANG_ARM) /* ARM 编译器 */
 #define AKERNEL_SECTION(x) __attribute__((section(x)))

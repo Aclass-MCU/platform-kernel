@@ -12,7 +12,7 @@ set(KERNEL_PUBLIC_HEADERS
     inc/aKernel_init.h
 )
 
-add_library(aKernel ${KERNEL_SOURCES})
+add_library(aKernel OBJECT ${KERNEL_SOURCES})
 
 target_sources(aKernel PUBLIC
     FILE_SET HEADERS
@@ -22,10 +22,5 @@ target_sources(aKernel PUBLIC
 
 target_link_libraries(aKernel PUBLIC
     aDrv
-    freertos_kernel
-)
-
-install(TARGETS aKernel
-    ARCHIVE   DESTINATION lib
-    FILE_SET HEADERS DESTINATION include/aKernel
+    aOS
 )
